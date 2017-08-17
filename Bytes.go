@@ -1,4 +1,4 @@
-package Math
+package gohelpmath
 
 // Int32ToBytes converts a 32-bit integer to a byte slice
 func Int32ToBytes(value int) []byte {

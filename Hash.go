@@ -1,4 +1,4 @@
-package Math
+package gohelpmath
 
 import "crypto/sha1"
 

@@ -1,4 +1,4 @@
-package Math
+package gohelpmath
 
 // Xor will apply XOR to each byte of a add b and return the result
 func Xor(a, b []byte) []byte {

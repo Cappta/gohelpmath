@@ -1,4 +1,4 @@
-package Math
+package gohelpmath
 
 // IntMin returns the lowest value of the provided integers
 func IntMin(values ...int) int {
