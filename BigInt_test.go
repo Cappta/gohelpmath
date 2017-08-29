@@ -4,18 +4,19 @@ import (
 	"fmt"
 	"math/rand"
 	"testing"
+	"time"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestBigInt(t *testing.T) {
-	seed := int64(1502995642753042800) //time.Now().UTC().UnixNano()
+	seed := time.Now().UTC().UnixNano()
 
 	// Only pass t into top-level Convey calls
 	Convey(fmt.Sprintf("Given the random seed %d", seed), t, func() {
 		rand.Seed(seed)
 		Convey("Given a random int64", func() {
-			intValue := int64(0) //rand.Uint64())
+			intValue := int64(rand.Uint64())
 			absIntValue := Abs64(intValue)
 			intValueBytes := TrimLeadingZeroBytes(Int64ToBytes(absIntValue))
 
