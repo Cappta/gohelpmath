@@ -41,8 +41,8 @@ func BytesToUint64(value []byte) uint64 {
 	return uint64(value[0])<<56 | uint64(value[1])<<48 | uint64(value[2])<<40 | uint64(value[3])<<32 | uint64(value[4])<<24 | uint64(value[5])<<16 | uint64(value[6])<<8 | uint64(value[7])
 }
 
-// BytesTrimLeadingZero will return the provided slice's reference after all leading zeroes
-func BytesTrimLeadingZero(value []byte) []byte {
+// TrimLeadingZeroBytes will return the provided slice's reference after all leading zeroes
+func TrimLeadingZeroBytes(value []byte) []byte {
 	for i := 0; i < len(value); i++ {
 		if value[i] != 0 {
 			return value[i:]

@@ -119,7 +119,7 @@ func ConveyUint64Bits(value uint64, expectedOutput []byte) {
 			})
 			Convey("When converting back to integer", func() {
 				rebuilt := BytesToUint64(output)
-				Convey("Then rebuilt value should equal original value", func() {
+				Convey("Then rebuilt value should resemble the original value", func() {
 					So(rebuilt, ShouldResemble, value)
 				})
 			})
@@ -128,9 +128,9 @@ func ConveyUint64Bits(value uint64, expectedOutput []byte) {
 }
 
 func ConveyTrim(input, expectedOutput []byte) {
-	Convey(fmt.Sprintf("Given slice %v", input), func() {
+	Convey(fmt.Sprintf("Given the slice %v", input), func() {
 		Convey("When trimming leading zeroes", func() {
-			output := BytesTrimLeadingZero(input)
+			output := TrimLeadingZeroBytes(input)
 			Convey("Then output should resemble expected output", func() {
 				So(output, ShouldResemble, expectedOutput)
 			})
