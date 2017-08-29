@@ -56,6 +56,8 @@ func TestBytes(t *testing.T) {
 		ConveyTrim([]byte{0, 0, 0, 0, 255, 255, 255, 255}, []byte{255, 255, 255, 255})
 		ConveyTrim([]byte{0, 0, 0, 0, 0, 255, 255, 255}, []byte{255, 255, 255})
 		ConveyTrim([]byte{0, 0, 0, 0, 0, 0, 255, 255}, []byte{255, 255})
+
+		ConveyReverse([]byte{0, 1, 2, 3, 4, 5, 6, 7}, []byte{7, 6, 5, 4, 3, 2, 1, 0})
 	})
 }
 
@@ -133,6 +135,23 @@ func ConveyTrim(input, expectedOutput []byte) {
 			output := TrimLeadingZeroBytes(input)
 			Convey("Then output should resemble expected output", func() {
 				So(output, ShouldResemble, expectedOutput)
+			})
+		})
+	})
+}
+
+func ConveyReverse(input, expectedOutput []byte) {
+	Convey(fmt.Sprintf("Given the slice %v", input), func() {
+		Convey("When reversing", func() {
+			output := ReverseBytes(input)
+			Convey("Then output should resemble expected output", func() {
+				So(output, ShouldResemble, expectedOutput)
+			})
+			Convey("When reversing back", func() {
+				rebuilt := ReverseBytes(output)
+				Convey("Then rebuilt value should resemble the original value", func() {
+					So(rebuilt, ShouldResemble, input)
+				})
 			})
 		})
 	})

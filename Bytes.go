@@ -50,3 +50,12 @@ func TrimLeadingZeroBytes(value []byte) []byte {
 	}
 	return value[len(value):]
 }
+
+// ReverseBytes will return a new slice with the values reversed
+func ReverseBytes(value []byte) (output []byte) {
+	output = make([]byte, len(value))
+	for i := 0; i < len(value); i++ {
+		output[i] = value[len(value)-i-1]
+	}
+	return output
+}
