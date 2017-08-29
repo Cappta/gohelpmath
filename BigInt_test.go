@@ -17,7 +17,7 @@ func TestBigInt(t *testing.T) {
 		Convey("Given a random int64", func() {
 			intValue := int64(0) //rand.Uint64())
 			absIntValue := Abs64(intValue)
-			intValueBytes := BytesTrimLeadingZero(Int64ToBytes(absIntValue))
+			intValueBytes := TrimLeadingZeroBytes(Int64ToBytes(absIntValue))
 
 			Convey(fmt.Sprintf("Given a Big Int from the int64 value %d", intValue), func() {
 				bigInt := NewBigIntFromInt64(intValue)

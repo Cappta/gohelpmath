@@ -3,7 +3,7 @@ package gohelpmath
 import (
 	"testing"
 
-	"github.com/Cappta/Cappta.Common.Go/Fixture"
+	"github.com/Cappta/gofixture"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
@@ -12,9 +12,9 @@ func TestXor(t *testing.T) {
 	// Only pass t into top-level Convey calls
 	Convey("Given some binary data", t, func() {
 		Convey("When A has 255 bytes", func() {
-			a := Fixture.Bytes(255)
+			a := gofixture.Bytes(255)
 			Convey("When B has 254 bytes", func() {
-				b := Fixture.Bytes(254)
+				b := gofixture.Bytes(254)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -23,7 +23,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 255 bytes", func() {
-				b := Fixture.Bytes(255)
+				b := gofixture.Bytes(255)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -32,7 +32,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 256 bytes", func() {
-				b := Fixture.Bytes(256)
+				b := gofixture.Bytes(256)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -42,9 +42,9 @@ func TestXor(t *testing.T) {
 			})
 		})
 		Convey("When A has 256 bytes", func() {
-			a := Fixture.Bytes(256)
+			a := gofixture.Bytes(256)
 			Convey("When B has 255 bytes", func() {
-				b := Fixture.Bytes(255)
+				b := gofixture.Bytes(255)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -53,7 +53,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 256 bytes", func() {
-				b := Fixture.Bytes(256)
+				b := gofixture.Bytes(256)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -62,7 +62,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 257 bytes", func() {
-				b := Fixture.Bytes(257)
+				b := gofixture.Bytes(257)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -72,9 +72,9 @@ func TestXor(t *testing.T) {
 			})
 		})
 		Convey("When A has 257 bytes", func() {
-			a := Fixture.Bytes(257)
+			a := gofixture.Bytes(257)
 			Convey("When B has 256 bytes", func() {
-				b := Fixture.Bytes(256)
+				b := gofixture.Bytes(256)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -83,7 +83,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 257 bytes", func() {
-				b := Fixture.Bytes(257)
+				b := gofixture.Bytes(257)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)
@@ -92,7 +92,7 @@ func TestXor(t *testing.T) {
 				})
 			})
 			Convey("When B has 258 bytes", func() {
-				b := Fixture.Bytes(258)
+				b := gofixture.Bytes(258)
 
 				Convey("Then XOR should resemble expected output", func() {
 					output := Xor(a, b)

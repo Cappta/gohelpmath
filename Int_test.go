@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Cappta/Cappta.Common.Go/Fixture"
+	"github.com/Cappta/gofixture"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -37,7 +37,7 @@ func TestInt(t *testing.T) {
 			})
 		})
 		Convey("Given a random int slice", func() {
-			ints := Fixture.Ints(100)
+			ints := gofixture.AnyInts(100)
 			Convey("When retrieving the minimum value", func() {
 				min := IntMin(ints...)
 

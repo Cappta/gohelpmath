@@ -3,13 +3,13 @@ package gohelpmath
 import (
 	"testing"
 
-	"github.com/Cappta/Cappta.Common.Go/Fixture"
+	"github.com/Cappta/gofixture"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestHash(t *testing.T) {
 	Convey("Given 256 bytes", t, func() {
-		bytes := Fixture.Bytes(256)
+		bytes := gofixture.Bytes(256)
 		Convey("When hashing to 1 bytes", func() {
 			hash := Hash(bytes, 1)
 			Convey("Then should resemble expected output", func() {
